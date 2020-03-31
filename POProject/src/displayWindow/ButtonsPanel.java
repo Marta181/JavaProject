@@ -1,3 +1,12 @@
+package displayWindow;
+import org.lwjgl.LWJGLException;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
+import org.lwjgl.opengl.GL11;
+
+import planeDrawer.Plane;
+import displayWindow.MainFrame;
+
 public class ButtonsPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

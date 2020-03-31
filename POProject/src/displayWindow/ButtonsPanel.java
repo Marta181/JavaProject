@@ -27,7 +27,7 @@ public class ButtonsPanel extends JPanel{
       panel1 = new ButtonsPanel();
       panel1.setBackground(Color.white);
       panel1.setSize(500, 400);
-      panel1.setLayout(new BorderLayoutLayout);
+      panel1.setLayout(new GridLayoutLayout(8,1));
       button1 = new JButton ("długość terenu");
       button2 = new JButton ("szerokość terenu");
       button3 = new JButton ("maksymalna wysokość punktu");
@@ -46,17 +46,8 @@ public class ButtonsPanel extends JPanel{
 	panel1.add(button6);
 	panel1.add(button7);
 	panel1.add(button8);
-	    
+	    this.add(panel1, BorderLayout.EAST);
     }
-	
-		
-		
-		ThreeShapesPanel panel2 = new ThreeShapesPanel();
-		panel2.setBackground(Color.lightGray);
-		panel2.setSize(500, 400);
-		
-		this.add(panel1, BorderLayout.EAST);
-		this.add(panel2);
 	
 	public static void main(String[] args) {
 		ButtonsPanel buttonspanel = new ButtonsPanel();

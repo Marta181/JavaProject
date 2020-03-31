@@ -4,6 +4,7 @@ public class ButtonsPanel extends JPanel{
 		this.setLayout(new GridLayout(1,2));  //this oznacza obiekt tej klasy, który będzie utworzony w main (i każdy kolejny obiekt)
 		
     ButtonsPanel panel1;
+		
     JButton button1;
     JButton button2;
     JButton button3;
@@ -28,21 +29,24 @@ public class ButtonsPanel extends JPanel{
 	    button8 = new JButton ("Generuj");
 	    
       label = new JLabel ("Tutaj bedzie widoczny wygenerowany teren.");
-	    
-	    
+	panel1.add(button1);
+	panel1.add(button2);
+	panel1.add(button3);
+	panel1.add(button4);
+	panel1.add(button5);
+	panel1.add(button6);
+	panel1.add(button7);
+	panel1.add(button8);
 	    
     }
 	
-		panel1.add(button1);
-		panel1.add(button2);
-		panel1.add(label);
-		panel1.add(field);
+		
 		
 		ThreeShapesPanel panel2 = new ThreeShapesPanel();
 		panel2.setBackground(Color.lightGray);
 		panel2.setSize(500, 400);
 		
-		this.add(panel1);
+		this.add(panel1, BorderLayout.EAST);
 		this.add(panel2);
 	
 	public static void main(String[] args) {

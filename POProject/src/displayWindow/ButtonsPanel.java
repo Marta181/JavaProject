@@ -10,7 +10,7 @@ import displayWindow.MainFrame;
 public class ButtonsPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		this.setLayout(new GridLayout(1,2));  //this oznacza obiekt tej klasy, który będzie utworzony w main (i każdy kolejny obiekt)
+		  
 	
     ButtonsPanel panel1;
     JButton button1;
@@ -26,7 +26,7 @@ public class ButtonsPanel extends JPanel{
 		
     public ButtonsPanel() throws HeadlessException{   //konstruktor
      this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-	this.setLayout(new BorderLayout());
+	this.setLayout(new BorderLayout());		//this oznacza obiekt tej klasy, który będzie utworzony w main (i każdy kolejny obiekt)
 	
 	JMenuBar menuBar = new JMenuBar();
 	menu1 = new JMenu("Menu");//w "" nazwa menu       // menu1 jako zm. globalna

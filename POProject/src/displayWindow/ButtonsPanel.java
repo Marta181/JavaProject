@@ -11,7 +11,6 @@ public class ButtonsPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		  
-	
     ButtonsPanel panel1;
     JButton button1;
     JButton button2;
@@ -39,17 +38,17 @@ public class ButtonsPanel extends JPanel{
 	        //menuItem3.addActionListener(this);
 	        JMenuItem menuItem4 = new JMenuItem("Interpolacja");
 	    
-	        menu1.add(menuItem1);// to przez to nie dziaÂłaÂł suwak (nie moÂżna byÂło go przesuwaĂ¦)
+	        menu1.add(menuItem1);
 	        menu1.add(menuItem2);
 	        menu1.add(menuItem3);
 	    	menu1.add(menuItem4);
 	        menuBar.add(menu1);
-	        this.setJMenuBar(menuBar);//dodaje do okna obiekt klasy JMenuBar	
+	        this.setJMenuBar(menuBar);	//dodaje do okna obiekt klasy JMenuBar	
 	    
-      panel1 = new ButtonsPanel();
+      panel1 = new ButtonsPanel();		//nie wiem czy ten panel1 ma być klasy ButtonsPanel, może mógłby być też JPanel? 
       panel1.setBackground(Color.white);
-      panel1.setSize(500, 400);
-      panel1.setLayout(new GridLayoutLayout(8,1));
+      panel1.setSize(500, 400);			
+      panel1.setLayout(new GridLayoutLayout(8,1));	//w tym układzie wszystkie te przyciski będą równej wielkości, jeśli Generuj ma być większy to trzeba to jakoś zmienić
       button1 = new JButton ("długość terenu");
       button2 = new JButton ("szerokość terenu");
       button3 = new JButton ("maksymalna wysokość punktu");
@@ -59,7 +58,7 @@ public class ButtonsPanel extends JPanel{
 	    button7 = new JButton ("względna zależność wysokości punktu od najbliższego otoczenia");
 	    button8 = new JButton ("Generuj");
 	    
-      label = new JLabel ("Tutaj bedzie widoczny wygenerowany teren.");
+      label = new JLabel ("Tutaj będzie widoczny wygenerowany teren.");
 	panel1.add(button1);
 	panel1.add(button2);
 	panel1.add(button3);
@@ -68,6 +67,7 @@ public class ButtonsPanel extends JPanel{
 	panel1.add(button6);
 	panel1.add(button7);
 	panel1.add(button8);
+	    panel1.add(label);
 	    this.add(panel1, BorderLayout.EAST);
     }
 	

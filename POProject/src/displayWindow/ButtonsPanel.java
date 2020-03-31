@@ -11,9 +11,8 @@ public class ButtonsPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		this.setLayout(new GridLayout(1,2));  //this oznacza obiekt tej klasy, który będzie utworzony w main (i każdy kolejny obiekt)
-		
+	
     ButtonsPanel panel1;
-		
     JButton button1;
     JButton button2;
     JButton button3;
@@ -22,8 +21,31 @@ public class ButtonsPanel extends JPanel{
     JButton button6;
     JButton button7;
     JButton button8;
-    JLabel label;	
+    JLabel label;
+    JMenu menu1;	
+		
     public ButtonsPanel() throws HeadlessException{   //konstruktor
+     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+	this.setLayout(new BorderLayout());
+	
+	JMenuBar menuBar = new JMenuBar();
+	menu1 = new JMenu("Menu");//w "" nazwa menu       // menu1 jako zm. globalna
+
+	        JMenuItem menuItem1 = new JMenuItem("Zapisz");
+	        //menuItem1.addActionListener(this);
+	        JMenuItem menuItem2 = new JMenuItem("Otwórz");
+	        //menuItem2.addActionListener(this);
+	        JMenuItem menuItem3 = new JMenuItem("Nowy");
+	        //menuItem3.addActionListener(this);
+	        JMenuItem menuItem4 = new JMenuItem("Interpolacja");
+	    
+	        menu1.add(menuItem1);// to przez to nie dziaÂłaÂł suwak (nie moÂżna byÂło go przesuwaĂ¦)
+	        menu1.add(menuItem2);
+	        menu1.add(menuItem3);
+	    	menu1.add(menuItem4);
+	        menuBar.add(menu1);
+	        this.setJMenuBar(menuBar);//dodaje do okna obiekt klasy JMenuBar	
+	    
       panel1 = new ButtonsPanel();
       panel1.setBackground(Color.white);
       panel1.setSize(500, 400);

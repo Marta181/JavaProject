@@ -1,80 +1,131 @@
 package displayWindow;
-import org.lwjgl.LWJGLException;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
-import org.lwjgl.opengl.GL11;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 import planeDrawer.Plane;
-import displayWindow.MainFrame;
 
-public class ButtonsPanel extends JPanel{
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
+public class MainDisplay extends JFrame{
+
 		  
-    ButtonsPanel panel1;
-    JButton button1;
-    JButton button2;
-    JButton button3;
-    JButton button4;
-    JButton button5;
-    JButton button6;
-    JButton button7;
-    JButton button8;
-    JLabel label;
-    JMenu menu1;	
-		
-    public ButtonsPanel() throws HeadlessException{   //konstruktor
-     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-	this.setLayout(new BorderLayout());		//this oznacza obiekt tej klasy, który będzie utworzony w main (i każdy kolejny obiekt)
+    JPanel ButonPanel;
+    JTextField setLenghtTextField;
+    JTextField setWidthTextField;
+    JTextField setMaxHeightTextField;
+    JTextField setMinHeightTextField;
+    JTextField setRoughnessTextField;
+    JTextField setSeedTextField;
+    JTextField setRelativnessTextField;
+    JButton generateButton;
+    
+	JLabel setLenghtLabel;
+	JLabel setWidthLabel;
+	JLabel setMaxHeightLabel;
+	JLabel setMinHeightLabel;
+	JLabel setRoughnessLabel;
+	JLabel setSeedLabel;
+	JLabel setRelativnessLabel;
 	
-	JMenuBar menuBar = new JMenuBar();
-	menu1 = new JMenu("Menu");//w "" nazwa menu       // menu1 jako zm. globalna
+    JMenu mainMenu;	
+    JMenuItem SaveMenuItem;
+    JMenuItem OpenMenuItem;
+    JMenuItem NewMenuItem;
+    JMenuItem InterpolationMenuItem;
+    JMenuBar menuBar;
+    
+    JPanel terrainPanel;
+    
+    public MainDisplay() throws HeadlessException{   //konstruktor
+     
+    	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	this.setLayout(new GridLayout(1,2));		//this oznacza obiekt tej klasy, ktory bedzie utworzony w main (i kazdy kolejny obiekt)
+	this.setSize(MeshFrame.HEIGHT, MeshFrame.WIDTH/2);
+	menuBar = new JMenuBar();
+	
+	mainMenu = new JMenu("Menu");       // menu1 jako zm. globalna
 
-	        JMenuItem menuItem1 = new JMenuItem("Zapisz");
-	        //menuItem1.addActionListener(this);
-	        JMenuItem menuItem2 = new JMenuItem("Otwórz");
-	        //menuItem2.addActionListener(this);
-	        JMenuItem menuItem3 = new JMenuItem("Nowy");
-	        //menuItem3.addActionListener(this);
-	        JMenuItem menuItem4 = new JMenuItem("Interpolacja");
+	        SaveMenuItem = new JMenuItem("Save");
+	        OpenMenuItem = new JMenuItem("Open");
+	        NewMenuItem = new JMenuItem("New");
+	        InterpolationMenuItem = new JMenuItem("Interpolation");
 	    
-	        menu1.add(menuItem1);
-	        menu1.add(menuItem2);
-	        menu1.add(menuItem3);
-	    	menu1.add(menuItem4);
-	        menuBar.add(menu1);
+	        mainMenu.add(SaveMenuItem);
+	        mainMenu.add(OpenMenuItem);
+	        mainMenu.add(NewMenuItem);
+	    	mainMenu.add(InterpolationMenuItem);
+	        menuBar.add(mainMenu);
 	        this.setJMenuBar(menuBar);	//dodaje do okna obiekt klasy JMenuBar	
+	        
+	        terrainPanel = new JPanel();
+	        this.add(terrainPanel);
+      
+	        ButonPanel = new JPanel();		
+      ButonPanel.setBackground(Color.white);		
+      ButonPanel.setLayout(new GridLayout(15,1));	//w tym ukladzie wszystkie te przyciski beda rownej wielkosci, jesli Generuj ma byc wiekszy to trzeba to jakos zmienic
+      setLenghtLabel = new JLabel ("Set lenght");
+	    setLenghtTextField = new JTextField; 
+      setLenghtTextField.addActionListener(new ActionListener() {	//to wyrzucamy?
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			terrainPanel.setBackground(new Color(123));
+			
+		}
+	});
+      setWidthLabel = new JLabel ("Set width");
+	    setWidthTextField = new JTextField;
+      setMaxHeightLabel = new JLabel ("Set maximum height");
+      	    setMaxHeightTextField = new JTextField;
+      setMinHeightLabel = new JLabel  ("Set minimum height");
+	    setMinHeightTextField = new JTextField;
+      setRoughnessLabel = new JLabel  ("Set roughness");
+	    setRoughnessTextField = new JTextField;
+      setSeedLabel = new JLabel ("Seed");
+	    setSeedTextField = new JTextField;
+      setRelativnessLabel = new JLabel  ("Height relativness of the neighbour points");
+	    setRelativnessTextField = new JTextField;
+	    generateButton = new JButton ("Generate");
 	    
-      panel1 = new ButtonsPanel();		//nie wiem czy ten panel1 ma być klasy ButtonsPanel, może mógłby być też JPanel? 
-      panel1.setBackground(Color.white);
-      panel1.setSize(500, 400);			
-      panel1.setLayout(new GridLayoutLayout(8,1));	//w tym układzie wszystkie te przyciski będą równej wielkości, jeśli Generuj ma być większy to trzeba to jakoś zmienić
-      button1 = new JButton ("długość terenu");
-      button2 = new JButton ("szerokość terenu");
-      button3 = new JButton ("maksymalna wysokość punktu");
-	    button4 = new JButton ("minimalna wysokość punktu");
-	    button5 = new JButton ("ziarnistość terenu");
-	    button6 = new JButton ("ziarno");
-	    button7 = new JButton ("względna zależność wysokości punktu od najbliższego otoczenia");
-	    button8 = new JButton ("Generuj");
+
+        ButonPanel.add(setLenghtLabel);
+	ButonPanel.add(setLenghtTextField);
+	ButonPanel.add(setWidthLabel);
+	ButonPanel.add(setWidthTextField);
+	ButonPanel.add(setMaxHeightLabel);
+	ButonPanel.add(setMaxHeightTextField);
+	ButonPanel.add(setMinHeightLabel);
+	ButonPanel.add(setMinHeightTextField);
+	ButonPanel.add(setRoughnessLabel);
+	ButonPanel.add(setRoughnessTextField);
+	ButonPanel.add(setSeedLabel);
+	ButonPanel.add(setSeedTextField);
+	ButonPanel.add(setRelativnessLabel);
+	ButonPanel.add(setRelativnessTextField);
+	ButonPanel.add(generateButton);
+	    this.add(ButonPanel);
 	    
-      label = new JLabel ("Tutaj będzie widoczny wygenerowany teren.");
-	panel1.add(button1);
-	panel1.add(button2);
-	panel1.add(button3);
-	panel1.add(button4);
-	panel1.add(button5);
-	panel1.add(button6);
-	panel1.add(button7);
-	panel1.add(button8);
-	    panel1.add(label);
-	    this.add(panel1, BorderLayout.EAST);
+	    
     }
 	
 	public static void main(String[] args) {
-		ButtonsPanel buttonspanel = new ButtonsPanel();
-		buttonspanel.setVisible(true);
+			
+			MeshFrame frameDisplay = new MeshFrame();
+			
+			
 	}
+	
 
 }
+
+
 

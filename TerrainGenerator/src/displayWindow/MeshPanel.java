@@ -2,22 +2,18 @@ package displayWindow;
 
 import java.awt.DisplayMode;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 
-import javax.swing.JFrame;
 
 
-import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
-import com.jogamp.opengl.GLCapabilities;
+
 import com.jogamp.opengl.GLEventListener;
-import com.jogamp.opengl.GLProfile;
-import com.jogamp.opengl.awt.GLCanvas;
+
 import com.jogamp.opengl.awt.GLJPanel;
 import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.FPSAnimator;
+
 
 
 

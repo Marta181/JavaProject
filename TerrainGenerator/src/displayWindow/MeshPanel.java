@@ -27,20 +27,15 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
    private GLU glu = new GLU();
    private float rquad = 0.0f;
    
-   int xCount = 9000;
-   int yCount = 7000;
+   int columns = 9000;
+   int rows = 7000;
    Random heightRandom = new Random();
-   float[][] height = new float[xCount][yCount];
+   float[][] height = new float[columns][rows];
    private long seed;
    
-   //private double panelWidthOffset;	
-   //private double panelHeightOffset;
-   	//private int panelHeight;
-    //private int panelWidth;
-	private static int columns=10;
-	private static int rows=10;
-	//private static int HeightScale=HEIGHT/rows;
-	//private static int WidthScale=WIDTH/columns;
+	//private static int columns=10;
+	//private static int rows=10;
+
 	public MeshPanel() {
 		// TODO Auto-generated constructor stub
 		//this.setSize(500, 500);
@@ -49,8 +44,8 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
 		//panelHeightOffset = this.getY();
 		//panelWidthOffset = this.getX();
 		seed=7347248;
-		for (int x = 0; x < xCount; x++) {
-			for (int y = 0; y < yCount; y++) {
+		for (int x = 0; x < columns; x++) {
+			for (int y = 0; y < rows; y++) {
 				height[x][y]=generateHeight(x, y);
 			}
 		}
@@ -72,11 +67,11 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
 	     // gl.glPushMatrix();
 	     //gl.glRotatef( rquad, 0.0f, 20.0f, 0.0f );
 	     gl.glRotatef( -29, 1.0f, 0.0f, 0.0f );
-	      for(int y=0; y>-yCount; y--){ 
+	      for(int y=0; y>-rows; y--){ 
 
 	    	  gl.glBegin( GL2.GL_TRIANGLE_STRIP);
 	    	  
-				for (int x = 0; x < xCount; x++) {
+				for (int x = 0; x < columns; x++) {
 					gl.glVertex3f(x, y, height[x][-y]);
 					gl.glVertex3f(x, y-1,0);
 				}

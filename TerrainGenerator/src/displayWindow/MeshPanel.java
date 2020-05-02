@@ -27,11 +27,13 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
    private GLU glu = new GLU();
    private float rquad = 0.0f;
    
-   int columns = 9000;
-   int rows = 7000;
+   int columns = 120;
+   int rows = 100;
+    int scale =5;
    Random heightRandom = new Random();
-   float[][] height = new float[columns][rows];
-   private long seed;
+   float[][] height= new float[columns][rows];
+   
+   public long seed;
 
 
 	public MeshPanel() {
@@ -39,7 +41,7 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
 		seed=7347248;
 		for (int x = 0; x < columns; x++) {
 			for (int y = 0; y < rows; y++) {
-				height[x][y]=generateHeight(x, y);
+				height[x][y]=generateHeight(x, y)*40;
 			}
 		}
 	}
@@ -56,17 +58,19 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
 	     gl.glClear (GL2.GL_COLOR_BUFFER_BIT |  GL2.GL_DEPTH_BUFFER_BIT );
 	     gl.glMatrixMode(GL2.GL_MODELVIEW);
 	      gl.glLoadIdentity();
-	      gl.glTranslatef( -170f, 10f, -40.5f );
+	      gl.glTranslatef( 20f, 190f, -320.5f );
 	   
-	     //gl.glRotatef( rquad, 0.0f, 20.0f, 0.0f );
-	     gl.glRotatef( -29, 1.0f, 0.0f, 0.0f );
+	     gl.glRotatef( rquad, 0.0f, 1.0f, 1.0f );
+	     gl.glRotatef( -45, 1.0f, 0.0f, 0.0f );
+
+	      gl.glTranslatef( -(columns*scale/2f), (rows*scale/2f), -220.5f );
 	      for(int y=0; y>-rows; y--){ 
 
 	    	  gl.glBegin( GL2.GL_TRIANGLE_STRIP);
 	    	  
 				for (int x = 0; x < columns; x++) {
-					gl.glVertex3f(x, y, height[x][-y]);
-					gl.glVertex3f(x, y-1,0);
+					gl.glVertex3f(x*scale, y*scale, height[x][-y]);
+					gl.glVertex3f(x*scale, (y-1)*scale,0);
 				}
 				
 				gl.glEnd();
@@ -110,13 +114,17 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
    }
       
    private float generateHeight(int x, int y) {
+	  
 	   float height=0;
+	   height = randomValue(x,y)*2f+(randomValue(x,y+1)+randomValue(x,y-1)+randomValue(x-1,y)+randomValue(x+1,y))+
+			   (randomValue(x+1,y+1)+randomValue(x+1,y-1)+randomValue(x-1,y+1)+randomValue(x-1,y-1))/2f;
+	   return height;
+	   
+	   }
+   private float randomValue(int x, int y) {
+	   
 	   heightRandom.setSeed(x*12345+y*4321+seed*54321);
-	   
-	   
-	   
-	   
-	   return heightRandom.nextFloat()*5;
+	   return heightRandom.nextFloat()*2-1;
    }
 	
 }

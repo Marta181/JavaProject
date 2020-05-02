@@ -32,17 +32,10 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
    Random heightRandom = new Random();
    float[][] height = new float[columns][rows];
    private long seed;
-   
-	//private static int columns=10;
-	//private static int rows=10;
+
 
 	public MeshPanel() {
-		// TODO Auto-generated constructor stub
-		//this.setSize(500, 500);
-		//panelHeight = this.getHeight();
-		//panelWidth = this.getWidth();
-		//panelHeightOffset = this.getY();
-		//panelWidthOffset = this.getX();
+
 		seed=7347248;
 		for (int x = 0; x < columns; x++) {
 			for (int y = 0; y < rows; y++) {
@@ -64,7 +57,7 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
 	     gl.glMatrixMode(GL2.GL_MODELVIEW);
 	      gl.glLoadIdentity();
 	      gl.glTranslatef( -170f, 10f, -40.5f );
-	     // gl.glPushMatrix();
+	   
 	     //gl.glRotatef( rquad, 0.0f, 20.0f, 0.0f );
 	     gl.glRotatef( -29, 1.0f, 0.0f, 0.0f );
 	      for(int y=0; y>-rows; y--){ 
@@ -81,13 +74,13 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
 				
 	      }
 	      
-	     // gl.glPopMatrix();
+	  
 	      rquad+=1f;
 	    }
    
    @Override
    public void dispose( GLAutoDrawable drawable ) {
-      // TODO Auto-generated method stub
+    
    }
    
    @Override

@@ -41,7 +41,7 @@ public class ConfigPanel extends JPanel implements ActionListener {
     JMenuBar menuBar;
     */
     public ConfigPanel() {
-		// TODO Auto-generated constructor stub
+		
     	 this.setLayout(new GridLayout(15,1));	//w tym ukladzie wszystkie te przyciski beda rownej wielkosci, jesli Generuj ma byc wiekszy to trzeba to jakos zmienic
          setLenghtLabel = new JLabel ("Set lenght");
    	    setLenghtTextField = new JTextField(); 

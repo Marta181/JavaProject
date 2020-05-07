@@ -13,6 +13,7 @@ public class ConfigurationListener implements ActionListener {
 		case "LENGHT": {
 			System.out.println("Nothing to do here with length");
 			String LengthString = setLengthTextField.getText();
+			int Length = 0;
 			try
 			{
 			Length = Integer.parseInt(LengthString);
@@ -26,6 +27,7 @@ public class ConfigurationListener implements ActionListener {
 		case "WIDTH": {
 			System.out.println("Nothing to do here with width");
 			String WidthString = setWidthTextField.getText();
+			int Width = 0;
 			try
 			{
 			Width = Integer.parseInt(WidthString);
@@ -54,6 +56,7 @@ public class ConfigurationListener implements ActionListener {
 		case "SEED": {
 			System.out.println("Nothing to do here with seed");
 			String seedString = setSeedTextField.getText();
+			long seed;
 			try
 			{
 			seed = Long.parseLong(seedString);

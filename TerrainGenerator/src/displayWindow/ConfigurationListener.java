@@ -4,15 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ConfigurationListener implements ActionListener {
-	 class TextFieldChangeListener implements ChangeListener{
+	 
 
-	            @Override
+	           /* @Override
 	            public void stateChanged(ChangeEvent arg0) {
 	                String value = String.format("%d", slider.getValue());      // value
 	                label.setText(value);
-	            }
+	            }*/
 
-	        }
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String optionPicked = e.getActionCommand();
@@ -20,6 +19,7 @@ public class ConfigurationListener implements ActionListener {
 		switch (optionPicked) {
 		case "LENGHT": {
 			System.out.println("Nothing to do here with length");
+			
 		break;	
 		}
 		case "WIDTH": {
@@ -44,7 +44,15 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "SEED": {
 			System.out.println("Nothing to do here with seed");
-			
+			String seedString = setSeedTextField.getText();
+			try
+			{
+			seed = Long.parseLong(seedString);
+			}
+			catch (NumberFormatException)
+			{
+				seed = 	7347248;
+			}
 			break;
 		}
 		case "RELATION": {

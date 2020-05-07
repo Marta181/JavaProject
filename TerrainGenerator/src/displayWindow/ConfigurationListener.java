@@ -68,7 +68,16 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "ROUGHNESS": {
 			System.out.println("Nothing to do here with roughness");
-			
+			String roughnesstString = setRoughTextField.getText();
+			float roughness = 0;
+			try
+			{
+			roughness = Float.parseFloat(roughnessString);
+			}
+			catch (NumberFormatException)
+			{
+				roughness = 0.3f;
+			}
 			break;
 		}
 		case "SEED": {
@@ -87,7 +96,16 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "RELATION": {
 			System.out.println("Nothing to do here with relation");
-			
+			String relativnessString = setRelativnessTextField.getText();
+			float relativness = 0;
+			try
+			{
+			relativness = Float.parseFloat(relativnessString);
+			}
+			catch (NumberFormatException)
+			{
+				relativness = 2f;
+			}
 			break;
 		}
 		case "GENERATE": {

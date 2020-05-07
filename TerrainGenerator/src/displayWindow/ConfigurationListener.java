@@ -12,11 +12,29 @@ public class ConfigurationListener implements ActionListener {
 		switch (optionPicked) {
 		case "LENGHT": {
 			System.out.println("Nothing to do here with length");
+			System.out.println("Nothing to do here with length");
+			String HEIGHTString = setLengthTextField.getText();
+			try
+			{
+			HEIGHT = Integer.parseInt(HEIGHTString);
+			}
+			catch (NumberFormatException)
+			{
+				HEIGHT = 700;
+			}
 		break;	
 		}
 		case "WIDTH": {
 			System.out.println("Nothing to do here with width");
-			
+			String WIDTHString = setWidthTextField.getText();
+			try
+			{
+			WIDTH = Integer.parseInt(WIDTHString);
+			}
+			catch (NumberFormatException)
+			{
+				WIDTH = 1000;
+			}
 			break;
 		}
 		case "MAX": {
@@ -36,8 +54,16 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "SEED": {
 			System.out.println("Nothing to do here with seed");
-			
-			break;
+			String seedString = setSeedTextField.getText();
+			try
+			{
+			seed = Long.parseLong(seedString);
+			}
+			catch (NumberFormatException)
+			{
+				seed = 	7347248;
+			}
+		break;	
 		}
 		case "RELATION": {
 			System.out.println("Nothing to do here with relation");

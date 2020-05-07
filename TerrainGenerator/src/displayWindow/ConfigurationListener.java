@@ -12,35 +12,44 @@ public class ConfigurationListener implements ActionListener {
 		switch (optionPicked) {
 		case "LENGHT": {
 			System.out.println("Nothing to do here with length");
-			String LengthString = setLengthTextField.getText();
-			int Length = 0;
+			String lengthString = setLengthTextField.getText();
+			int length = 0;
 			try
 			{
-			Length = Integer.parseInt(LengthString);
+			length = Integer.parseInt(lengthString);
 			}
 			catch (NumberFormatException)
 			{
-				Length = 700;
+				length = 700;
 			}
 		break;	
 		}
 		case "WIDTH": {
 			System.out.println("Nothing to do here with width");
-			String WidthString = setWidthTextField.getText();
-			int Width = 0;
+			String widthString = setWidthTextField.getText();
+			int width = 0;
 			try
 			{
-			Width = Integer.parseInt(WidthString);
+			width = Integer.parseInt(widthString);
 			}
 			catch (NumberFormatException)
 			{
-				Width = 1000;
+				width = 1000;
 			}
 			break;
 		}
 		case "MAX": {
 			System.out.println("Nothing to do here with max");
-			
+			String maxHeightString = setMaxHeightTextField.getText();
+			float maxHeight = 0;
+			try
+			{
+			maxHeight = Float.parseFloat(maxHeightString);
+			}
+			catch (NumberFormatException)
+			{
+				maxHeight = 70;
+			}
 			break;
 		}
 		case "MIN": {

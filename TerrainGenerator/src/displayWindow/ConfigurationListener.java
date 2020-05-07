@@ -4,13 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ConfigurationListener implements ActionListener {
-	 
-
-	           /* @Override
-	            public void stateChanged(ChangeEvent arg0) {
-	                String value = String.format("%d", slider.getValue());      // value
-	                label.setText(value);
-	            }*/
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

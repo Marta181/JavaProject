@@ -12,28 +12,27 @@ public class ConfigurationListener implements ActionListener {
 		switch (optionPicked) {
 		case "LENGHT": {
 			System.out.println("Nothing to do here with length");
-			System.out.println("Nothing to do here with length");
-			String HEIGHTString = setLengthTextField.getText();
+			String LengthString = setLengthTextField.getText();
 			try
 			{
-			HEIGHT = Integer.parseInt(HEIGHTString);
+			Length = Integer.parseInt(LengthString);
 			}
 			catch (NumberFormatException)
 			{
-				HEIGHT = 700;
+				Length = 700;
 			}
 		break;	
 		}
 		case "WIDTH": {
 			System.out.println("Nothing to do here with width");
-			String WIDTHString = setWidthTextField.getText();
+			String WidthString = setWidthTextField.getText();
 			try
 			{
-			WIDTH = Integer.parseInt(WIDTHString);
+			Width = Integer.parseInt(WidthString);
 			}
 			catch (NumberFormatException)
 			{
-				WIDTH = 1000;
+				Width = 1000;
 			}
 			break;
 		}

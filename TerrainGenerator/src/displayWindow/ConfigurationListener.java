@@ -54,7 +54,16 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "MIN": {
 			System.out.println("Nothing to do here with min");
-			
+			String minHeightString = setMinHeightTextField.getText();
+			float minHeight = 0;
+			try
+			{
+			minHeight = Float.parseFloat(minHeightString);
+			}
+			catch (NumberFormatException)
+			{
+				minHeight = 10;
+			}
 			break;
 		}
 		case "ROUGHNESS": {

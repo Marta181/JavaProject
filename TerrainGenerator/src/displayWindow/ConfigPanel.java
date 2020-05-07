@@ -32,25 +32,39 @@ public class ConfigPanel extends JPanel implements ActionListener {
 	JLabel setRelativnessLabel;
 	
     JMenu mainMenu;	
-    JMenuItem SaveMenuItem;
-    JMenuItem OpenMenuItem;
-    JMenuItem NewMenuItem;
-	JMenu InterpolationMenu;
-	JMenuItem InterpolationMenuLinear;
-	JMenuItem InterpolationMenuTrigonometric;
+    JMenuItem saveMenuItem;
+    JMenuItem openMenuItem;
+    JMenuItem newMenuItem;
+	JMenu interpolationMenu;
+	JMenuItem interpolationMenuLinear;
+	JMenuItem interpolationMenuTrigonometric;
 	JMenuBar menuBar;
     
     public ConfigPanel() {
 		
     	 menubar = new MenuBar();
 	 mainMenu = new JMenu("Menu");
-	 SaveMenuItem = new JMenuItem("Save");
-	 OpenMenuItem = new JMenuItem("Open");
-	 NewMenuItem = new JMenuItem("New");
+	    mainMenu.setActionCommand("MAINMENU");
+   	    mainMenu.addActionListener(new ConfigurationListener());
+	 saveMenuItem = new JMenuItem("Save");
+	    saveMenuItem.setActionCommand("SAVE");
+   	    saveMenuItem.addActionListener(new ConfigurationListener());
+	 openMenuItem = new JMenuItem("Open");
+	    openMenuItem.setActionCommand("OPEN");
+   	    openMenuItem.addActionListener(new ConfigurationListener());
+	 newMenuItem = new JMenuItem("New");
+	    newMenuItem.setActionCommand("NEW");
+   	    newMenuItem.addActionListener(new ConfigurationListener());
 	    
-	 InterpolationMenu = new JMenu("Interpolation");
-	    	InterpolationMenuLinear = new JMenuItem("Linear");
-	    	InterpolationMenuTrigonometric = new JMenuItem("Trigonometric");
+	 interpolationMenu = new JMenu("Interpolation");
+	    interpolationMenu.setActionCommand("INTERPOLATIONMENU");
+   	    interpolationMenu.addActionListener(new ConfigurationListener());
+	 interpolationMenuLinear = new JMenuItem("Linear");
+	    interpolationMenuLinear.setActionCommand("LINEAR");
+   	    interpolationMenulinear.addActionListener(new ConfigurationListener());
+	 interpolationMenuTrigonometric = new JMenuItem("Trigonometric");
+	    interpolationMenuTrigonometric.setActionCommand("TRIGONOMETRIC");
+   	    interpolationMenuTrigonometric.addActionListener(new ConfigurationListener());
 	    
 	        mainMenu.add(SaveMenuItem);
 	        mainMenu.add(OpenMenuItem);

@@ -43,7 +43,7 @@ public class ConfigPanel extends JPanel implements ActionListener {
     
     public ConfigPanel() {
 		
-    	 menubar = new MenuBar();
+    	 menuBar = new JMenuBar();
 	 mainMenu = new JMenu("Menu");
 	    mainMenu.setActionCommand("MAINMENU");
    	    mainMenu.addActionListener(new ConfigurationListener());

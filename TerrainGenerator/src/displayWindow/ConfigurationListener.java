@@ -1,4 +1,4 @@
-package displayWindow;
+package package1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +20,7 @@ public class ConfigurationListener implements ActionListener {
 			System.out.println("Nothing to do here with length");
 
 			
-			  String lengthString = panel.getSetLenghtTextField().getText(); 
+			  String lengthString = panel.getSetLengthTextField().getText(); //dlaczego getSet a nie set?
 			  int length = 0;
 			  try {
 			  length = Integer.parseInt(lengthString);

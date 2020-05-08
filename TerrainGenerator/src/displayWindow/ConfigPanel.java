@@ -1,4 +1,4 @@
-package displayWindow;
+package package1;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 public class ConfigPanel extends JPanel {
 	
-	JTextField setLenghtTextField;
+	JTextField setLengthTextField;
     JTextField setWidthTextField;
     JTextField setMaxHeightTextField;
     JTextField setMinHeightTextField;
@@ -23,7 +23,7 @@ public class ConfigPanel extends JPanel {
     JTextField setRelativnessTextField;
     JButton generateButton;
     
-	JLabel setLenghtLabel;
+	JLabel setLengthLabel;
 	JLabel setWidthLabel;
 	JLabel setMaxHeightLabel;
 	JLabel setMinHeightLabel;
@@ -80,10 +80,10 @@ public class ConfigPanel extends JPanel {
 	    
 	    
 	 this.setLayout(new GridLayout(15,1));	
-         setLenghtLabel = new JLabel ("Set lenght");
-   	    setLenghtTextField = new JTextField(); 
-   	    setLenghtTextField.setActionCommand("LENGHT");
-   	    	setLenghtTextField.addActionListener(new ConfigurationListener(this));
+         setLengthLabel = new JLabel ("Set length");
+   	    setLengthTextField = new JTextField(); 
+   	    setLengthTextField.setActionCommand("LENGHT");
+   	    	setLengthTextField.addActionListener(new ConfigurationListener(this));
          setWidthLabel = new JLabel ("Set width");
    	    setWidthTextField = new JTextField();
    	    setWidthTextField.setActionCommand("WIDTH");
@@ -112,8 +112,8 @@ public class ConfigPanel extends JPanel {
    	    generateButton.setActionCommand("GENERATE");
    	    generateButton.addActionListener(new ConfigurationListener(this));
 
-           this.add(setLenghtLabel);
-           this.add(setLenghtTextField);
+           this.add(setLengthLabel);
+           this.add(setLengthTextField);
            this.add(setWidthLabel);
            this.add(setWidthTextField);
            this.add(setMaxHeightLabel);
@@ -128,8 +128,8 @@ public class ConfigPanel extends JPanel {
            this.add(setRelativnessTextField);
            this.add(generateButton);
     }
-	public JTextField getSetLenghtTextField() {
-		return setLenghtTextField;
+	public JTextField getSetLengthTextField() {
+		return setLengthTextField;
 	}
 	public JTextField getSetWidthTextField() {
 		return setWidthTextField;

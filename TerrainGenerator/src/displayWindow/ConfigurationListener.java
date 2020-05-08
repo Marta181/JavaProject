@@ -110,9 +110,19 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "GENERATE": {
 			System.out.println("Nothing to do here with generate");
-			
+			repaint();
 			break;
 		}
+		case "LINEAR": {
+			System.out.println("Nothing to do here with linear");
+			isLinear = true;
+		break;	
+		}
+		case "TRIGONOMETRIC": {
+			System.out.println("Nothing to do here with trigonometric");
+			isLinear = false;
+		break;	
+		}		
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + optionPicked);
 		}

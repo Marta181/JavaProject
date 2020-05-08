@@ -1,4 +1,4 @@
-package displayWindow;
+package package1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +20,7 @@ public class ConfigurationListener implements ActionListener {
 			System.out.println("Nothing to do here with length");
 
 			
-			  String lengthString = panel.getSetLengthTextField().getText(); //dlaczego getSet a nie set?
+			  String lengthString = panel.getSetLengthTextField().getText(); 
 			  int length = 0;
 			  try {
 			  length = Integer.parseInt(lengthString);
@@ -35,7 +35,7 @@ public class ConfigurationListener implements ActionListener {
 
 		case "WIDTH": {
 			System.out.println("Nothing to do here with width");
-			String widthString = panel.setWidthTextField.getText();
+			String widthString = panel.getSetWidthTextField().getText();
 			int width = 0; 
 			width = Integer.parseInt(widthString);
 			try
@@ -50,7 +50,7 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "MAX": {
 			System.out.println("Nothing to do here with max");
-			String maxHeightString = panel.setMaxHeightTextField.getText();
+			String maxHeightString = panel.getSetMaxHeightTextField().getText();
 			float maxHeight = 0;
 			maxHeight = Float.parseFloat(maxHeightString);
 			try
@@ -65,7 +65,7 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "MIN": {
 			System.out.println("Nothing to do here with min");
-			String minHeightString = panel.setMinHeightTextField.getText();
+			String minHeightString = panel.getSetMinHeightTextField().getText();
 			float minHeight = 0;
 			minHeight = Float.parseFloat(minHeightString);
 			try
@@ -80,7 +80,7 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "ROUGHNESS": {
 			System.out.println("Nothing to do here with roughness");
-			String roughnessString = panel.setRoughnessTextField.getText();
+			String roughnessString = panel.getSetRoughnessTextField().getText();
 			float roughness = 0;
 			roughness = Float.parseFloat(roughnessString);
 			try
@@ -95,7 +95,7 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "SEED": {
 			System.out.println("Nothing to do here with seed");
-			String seedString = panel.setSeedTextField.getText();
+			String seedString = panel.getSetSeedTextField().getText();
 			long seed;
 			seed = Long.parseLong(seedString);
 			try
@@ -110,7 +110,7 @@ public class ConfigurationListener implements ActionListener {
 		}
 		case "RELATION": {
 			System.out.println("Nothing to do here with relation");
-			String relativnessString = panel.setRelativnessTextField.getText();
+			String relativnessString = panel.getSetRelativnessTextField().getText();
 			float relativness = 0;
 			relativness = Float.parseFloat(relativnessString);
 			try

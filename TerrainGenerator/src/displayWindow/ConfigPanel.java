@@ -39,6 +39,7 @@ public class ConfigPanel extends JPanel implements ActionListener {
 	JMenuItem interpolationMenuLinear;
 	JMenuItem interpolationMenuTrigonometric;
 	JMenuBar menuBar;
+	boolean isLinear;
     
     public ConfigPanel() {
 		

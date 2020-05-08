@@ -18,9 +18,7 @@ public class MainDisplay extends JFrame {
 	
 	final public static int HEIGHT = 700;
 	final public static int WIDTH = 1000;
-	//konstruktor robiacy (nie wszystko) to co teraz robi main napisac
-	//tutaj (w MainDisplayu) bedzie menu, pola tego typu
-	//zrobic...
+	
 	   public static void main( String[] args ) {
 
 		 //getting the capabilities object of GL2 profile
@@ -51,7 +49,7 @@ public class MainDisplay extends JFrame {
 		      frame.add(conf,BorderLayout.EAST);
 		      frame.setVisible(true);
 		      
-		      final FPSAnimator animator = new FPSAnimator(glcanvas, 300,true); //funkcja od krecenia
+		      final FPSAnimator animator = new FPSAnimator(glcanvas, 300,true); 
 		         animator.start();
 		   }
 		   

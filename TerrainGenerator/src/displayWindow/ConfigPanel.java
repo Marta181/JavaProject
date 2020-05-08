@@ -1,4 +1,4 @@
-package package1;
+package displayWindow;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;

@@ -1,4 +1,4 @@
-package package2;
+package pl.edu.pw.fizyka.pojava.TerrainGenerator;
 
 
 import java.awt.DisplayMode;
@@ -37,7 +37,7 @@ public class MeshPanel extends GLJPanel implements GLEventListener {
    //private float relativness = 4f;
    //int columns = 500;
    //int rows = 500;
-   static float[][] height;	//zmienilam na static, bo action listener dla SAVE
+   static float[][] height;
    
 
 	public MeshPanel() {

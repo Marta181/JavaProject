@@ -1,4 +1,4 @@
-package package2;
+package pl.edu.pw.fizyka.pojava.TerrainGenerator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +15,6 @@ public class ConfigurationListener implements ActionListener {
 	ConfigPanel confPanel;
 	//Params param;
 	public ConfigurationListener(ConfigPanel configPanel) {
-		// TODO Auto-generated constructor stub
 		this.confPanel = configPanel;
 		
 	}

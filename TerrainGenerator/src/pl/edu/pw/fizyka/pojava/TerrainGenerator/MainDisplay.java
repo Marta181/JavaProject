@@ -1,10 +1,6 @@
-package package2;
-
-
+package pl.edu.pw.fizyka.pojava.TerrainGenerator;
 
 import java.awt.BorderLayout;
-
-
 import javax.swing.JFrame;
 
 import com.jogamp.opengl.GLCapabilities;

@@ -1,4 +1,4 @@
-package package2;
+package pl.edu.pw.fizyka.pojava.TerrainGenerator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

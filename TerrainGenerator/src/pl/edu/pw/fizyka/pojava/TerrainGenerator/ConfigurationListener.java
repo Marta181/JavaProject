@@ -1,4 +1,4 @@
-package wersja10czerwca;
+package pl.edu.pw.fizyka.pojava.TerrainGenerator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -110,8 +110,8 @@ public class ConfigurationListener implements ActionListener {
 				}
 				catch (NumberFormatException ex) {
 					System.out.println("Intercepted exception: " + ex.getClass().getName());
-					System.out.println("Change the 'height relativeness of the neighbour points' string format.");
-					System.out.println("Previous value preserved. Current height relativeness of the neighbour points value: " + Params.getRelativness());
+					System.out.println("Change the 'height relativness of the neighbour points' string format.");
+					System.out.println("Previous value preserved. Current height relativness of the neighbour points value: " + Params.getRelativness());
 					ex.printStackTrace();
 					String previousValue = Float.toString(Params.relativness);
 					confPanel.relativnessTextField().setText(previousValue);
@@ -226,7 +226,7 @@ public class ConfigurationListener implements ActionListener {
 				}
 				catch (NumberFormatException ex) {
 					System.out.println("Intercepted exception: " + ex.getClass().getName());
-					System.out.println("Change the 'height relativeness of the neighbour points' string format.");
+					System.out.println("Change the 'height relativness of the neighbour points' string format.");
 					ex.printStackTrace();
 				} catch (IOException ex) {
 					System.out.println("Intercepted exception: " + ex.getClass().getName());

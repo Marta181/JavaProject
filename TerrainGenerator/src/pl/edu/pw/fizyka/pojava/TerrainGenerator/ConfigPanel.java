@@ -1,4 +1,4 @@
-package wersja10czerwca;
+package pl.edu.pw.fizyka.pojava.TerrainGenerator;
 
 import java.awt.Container;
 import java.awt.GridLayout;
